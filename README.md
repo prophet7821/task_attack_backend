@@ -1,7 +1,7 @@
-# ByteBloom Blog Platform
+# ByteBloom Blog Platform(Backend)
 
 ## Description
-Bytebloom is where users can sign up, log in, and post articles. The platform allows users to view all posts and filter them by author. The backend is built using NestJS, and the frontend uses Next.js 14 with TypeScript.
+Bytebloom is where users can sign up, log in, and post articles. The platform allows users to view all posts and filter them by author. The backend is built using NestJS, which is a framework built on Node & Express.
 
 ## Tech Stack
 - **Backend**: NestJS
@@ -52,6 +52,8 @@ The server will start on http://localhost:3030.
 | POST   | `/v1/login`   | `{ "email": "user@example.com", "password": "password" }`    |              | Logs in a user                      | `{ "token": "JWT_TOKEN" }`    | No        |
 | POST   | `/v1/signup`  | `{ "fullName": "User Name", "email": "user@example.com", "password": "password" }` |              | Registers a new user                | `{ "id": "USER_ID" }`         | No        |
 | GET    | `/v1/profile` |                                                              |              | Gets the profile of authenticated user | `{ "id": "USER_ID", "fullName": "User Name", "email": "user@example.com" }` | Yes       |
-| GET    | `/v1/post`    |                                            | `page` (optional), `limit` (optional), `author` (optional) | Retrieves all posts with optional pagination and author filtering | `[ { "id": "POST_ID", "title": "Title", "content": "Content", "authorId": "AUTHOR_ID" } ]` | No        |
-| POST   | `/v1/post`    | `{ "title": "Title", "content": "Content" }` |                              | Creates a new post (requires authentication) | `{ "id": "POST_ID", "title": "Title", "content": "Content", "authorId": "AUTHOR_ID" }`   | Yes       |
+| GET    | `/v1/post`    |                                                              | `page` (optional), `limit` (optional), `author` (optional), `authorName` (optional) | Retrieves all posts with optional pagination and author filtering | `[ { "id": "POST_ID", "title": "Title", "content": "Content", "authorId": "AUTHOR_ID" } ]` | No        |
+| GET    | `/v1/post/:id`|                                                              |              | Retrieves a post by its ID          | `{ "id": "POST_ID", "title": "Title", "content": "Content", "authorId": "AUTHOR_ID" }` | No        |
+| POST   | `/v1/post`    | `{ "title": "Title", "content": "Content" }` |              | Creates a new post (requires authentication) | `{ "id": "POST_ID", "title": "Title", "content": "Content", "authorId": "AUTHOR_ID" }`   | Yes       |
+
 
