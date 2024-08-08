@@ -41,7 +41,7 @@ yarn install
 ### Running the Application
 
 ```bash
-yarn dev
+yarn start:dev
 ```
 The server will start on http://localhost:3030.
 
